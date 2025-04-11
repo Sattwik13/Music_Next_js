@@ -1,12 +1,21 @@
 import Link from "next/link";
 import { Spotlight } from "./ui/Spotlight";
 import { Button } from "./ui/moving-border";
+import { cn } from "../utils/cn";
 
 
 function HeroSection() {
   return (
     <div className="h-auto md:h-[40rem] w-full rounded-md flex flex-col items-center justify-center relative overflow-hidden mx-auto py-10 md:py-0"
     >
+    <div
+        className={cn(
+          "absolute inset-0",
+          "[background-size:40px_40px]",
+          "[background-image:linear-gradient(to_right,#e4e4e7_1px,transparent_1px),linear-gradient(to_bottom,#e4e4e7_1px,transparent_1px)]",
+          "dark:[background-image:linear-gradient(to_right,#262626_0px,transparent_1px),linear-gradient(to_bottom,#262626_0px,transparent_1px)]",
+        )}
+      />  
      <Spotlight
         className="-top-40 left-0 md:-top-20 md:left-60"
         fill="white"
