@@ -3,6 +3,8 @@ import React from "react";
 import { motion } from "motion/react";
 import Link from "next/link";
 import Image from "next/image";
+import { LinkProps } from "next/link";
+import { AnchorHTMLAttributes, ReactNode } from "react";
 
 const transition = {
   type: "spring",
@@ -12,6 +14,11 @@ const transition = {
   restDelta: 0.001,
   restSpeed: 0.001,
 };
+
+type HoveredLinkProps = LinkProps &
+  AnchorHTMLAttributes<HTMLAnchorElement> & {
+    children: ReactNode;
+  };
 
 export const MenuItem = ({
   setActive,
@@ -109,7 +116,7 @@ export const ProductItem = ({
   );
 };
 
-export const HoveredLink = ({ children, ...rest }: any) => {
+export const HoveredLink = ({ children, ...rest }: HoveredLinkProps) => {
   return (
     <Link
       {...rest}
